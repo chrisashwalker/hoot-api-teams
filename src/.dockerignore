@@ -1,0 +1,17 @@
+# src/.dockerignore
+
+**/__pycache__
+**/*.py[cod]
+**/*$py.class
+**/*.pytest_cache
+
+# C extensions
+*.so
+
+**/*.pkl
+
+app/tmp
+app/.gitignore
+tmp/
+
+Dockerfile*
