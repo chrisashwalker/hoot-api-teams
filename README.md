@@ -20,4 +20,4 @@ python -m src.app.main
 docker build -t hoot-api-teams ./src
 
 ## Run docker image
-docker run --name hoot-api-teams-container -p 5000:80 hoot-api-teams 
+docker run --rm --name hoot-api-teams-container -p 5000:80 hoot-api-teams 
