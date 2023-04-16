@@ -16,6 +16,9 @@ python -m pytest -s
 ## Execute app
 python -m src.app.main
 
+## Hot reload
+python -m flask --app src.app.main.py --debug run
+
 ## Create docker image
 docker build -t hoot-api-teams ./src
 
