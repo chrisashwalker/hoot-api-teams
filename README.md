@@ -10,17 +10,14 @@ python -m pip install -r ./src/requirements.txt
 ## Write requirements
 pip freeze > ./src/requirements.txt
 
-## Run tests
-python -m pytest -s
-
 ## Execute app
-python -m src.app.main
+python -m flask --app src.app.main run --port 8003
 
 ## Hot reload
-python -m flask --app src.app.main.py --debug run
+python -m flask --app src.app.main run --port 8003 --debug
 
 ## Create docker image
 docker build -t hoot-api-teams ./src
 
 ## Run docker image
-docker run --rm --name hoot-api-teams-container -p 5000:80 hoot-api-teams 
+docker run --rm --name hoot-api-teams-container -p 8003:8003 hoot-api-teams 

@@ -1,8 +1,8 @@
 from flask import Flask, jsonify, request
 from flask_expects_json import expects_json
 from jsonpatch import JsonPatch
-from src.data.teams_data_store import teams
-from src.models.team import Team
+from ..data.teams_data_store import teams
+from ..models.team import Team
 
 app = Flask(__name__)
 
@@ -85,4 +85,4 @@ def delete_team(id):
     return jsonify({"message": "Team not found"}), 404
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=8003)
