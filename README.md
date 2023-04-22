@@ -20,4 +20,4 @@ python -m flask --app src.app.main run --port 8003 --debug
 docker build -t hoot-api-teams ./src
 
 ## Run docker image
-docker run --rm --name hoot-api-teams-container -p 8003:8003 hoot-api-teams 
+docker run --name hoot-api-teams-container -p 8003:8003 hoot-api-teams 
