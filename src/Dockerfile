@@ -1,5 +1,7 @@
-FROM python:3.9
-RUN pip3 install --upgrade pip
-COPY ./ ./
-RUN  pip3 install -r requirements.txt
-CMD ["python", "-m", "flask", "--app", "app.main", "run", "--port", "8003", "--debug"]
+FROM python:alpine
+COPY ./requirements.txt /app/requirements.txt
+WORKDIR /app
+RUN  pip install -r requirements.txt
+COPY . /app
+ENTRYPOINT ["python"]
+CMD ["main.py"]
