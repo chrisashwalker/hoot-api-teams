@@ -1,3 +1,4 @@
 from models.team import Team
 
-teams = [Team(i, f"Team{i}") for i in range(1,5)]
+def init_teams():
+    return [Team(i, f"Team{i}").__dict__ for i in range(1,5)]
