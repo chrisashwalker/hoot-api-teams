@@ -1,5 +1,4 @@
 class Team:
-    members = []
 
     def __init__(self, id, name, parent = None):
         self.id = id

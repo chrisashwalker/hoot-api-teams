@@ -10,12 +10,14 @@ from models.team import Team
 
 app = Flask(__name__)
 
+# Connect to Mongo DB and seed with teams data, if necessary
 app.config["MONGO_URI"] = "mongodb://root:guest@hoot-db-mongo:27017/hoot?authSource=admin"
 mongo = PyMongo(app)
 teams = mongo.db.get_collection('teams')
 if teams.estimated_document_count() < 1:
     teams.insert_many(init_teams())
 
+# Connect to the deleted-objects message queue
 connection = BlockingConnection(ConnectionParameters('hoot-message-queues'))
 channel = connection.channel()
 channel.queue_declare(queue='deleted-objects', durable=True)
