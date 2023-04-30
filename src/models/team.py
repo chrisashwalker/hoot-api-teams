@@ -6,6 +6,6 @@ class Team:
         self.parent = parent
 
     def rebuild(self, dict):
-        self.id = dict["id"]
-        self.name = dict["name"]
-        self.parent = dict["parent"]
+        self.id = dict['id']
+        self.name = dict['name']
+        self.parent = dict['parent']
