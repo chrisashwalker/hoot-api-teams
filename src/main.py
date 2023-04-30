@@ -96,7 +96,7 @@ def delete_team(id):
                 msg = '{{"type":"team","objId":{0}}}'.format(id)
                 channel.basic_publish('', 'deleted-objects', msg)
         except Exception as e:
-            print('Failed to send deletion message: ' + e)
+            print('Failed to send deletion message.')
         return jsonify({}), 204
           
     return jsonify({'message': 'Team not found'}), 404
